@@ -17,18 +17,62 @@ Específicos
 - Visual studio Code, python
 
 # Modelo de Estrella
-Por la simplicidad y claridad se utilizo el model de estrella para diseñar el Datawarehouse
+De los datos proporcionados del archivo .csv se observo que se puede divir la información de la siguiente manera:<br>
+PassengerID;FirstName;LastName;Gender;Age;Nationality  
+AirportName;AirportCountryCode;CountryName;AirportContinent;Continents  
+DepartureDate  
+ArrivalAirport  
+PilotName  
+FlightStatus  
+<br>
+Observando y analizando lo anterior se procedio a estructurar los datos en un modelo de estrella por la simplicidad y claridad del modelo que incluye una tabla de hechos central y varias tablas de dimensiones. Este modelo facilita las consultas y el análisis de datos.
+<br>
+
 ![](Imagen/1.png) <br>
+
+![](Imagen/2.png) <br>
+
 
 # Tabla Hechos(fact)
 
-Contiene los datos principales que se desean analizar, como las transacciones o eventos. En tu caso, la tabla de hechos Hechos incluye información sobre los vuelos, como PassengerID, AeropuertosID, SalidaId, PilotoId, ArrivalAirport, y FlightStatus.
+Contiene los datos principales que se desean analizar, como las transacciones o eventos. En este caso la tabla de hecho inclure la siguiente informacion sobre los vuelos: <br>
+
+- HechoID
+- PassengerID
+- AeropuertosID
+- SalidaId
+- PilotoId
+- ArrivalAirport
+- FlightStatus.
+<br>
+La metrica de ArrivalAirport y FlightStatus la estamos tomando en la tabla de hecho como un dato sin la necesidad de relacionar con otros atributos.
 
 # Dimensiones
 
-Proporcionan el contexto para los datos de la tabla de hechos. Las dimensiones contienen atributos descriptivos que permiten categorizar y filtrar los datos en la tabla de hechos.  
-Las tablas de dimensiones son:
-D1: Pasajeros 
-D2: Aeropuertos 
-D3: SalidaFecha 
-D4: Pilotos 
+Proporcionan el contexto para los datos de la tabla de hechos. Las dimensiones contienen atributos descriptivos que permiten categorizar y filtrar los datos en la tabla de hechos. <br> 
+Las dimensiones que se tomaron en cuentas son las sigueintes: <br>
+
+### D1: Pasajeros 
+PassengerID (llave subrogada) <br>
+FirstName<br>
+LastName<br>
+Gender<br>
+Age<br>
+Nationality<br>
+<br>
+
+### D2: Aeropuertos <br>
+AeropuertosID (llave subrogada)<br>
+AirportName<br>
+AirportCountryCode<br>
+CountryName<br>
+AirportContinent<br>
+Continents<br>
+
+### D3: SalidaFecha<br> 
+SalidaId (llave subrogada)<br>
+DepartureDate<br>
+
+### D4: Pilotos <br>
+PilotoId (llave subrogada)<br>
+PilotName<br>
