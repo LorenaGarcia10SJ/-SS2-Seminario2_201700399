@@ -80,71 +80,70 @@ def menuConsultas(conn):
 
             if opcion == '1':
                 print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.txt"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta1.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta1.txt"')
                 input("")
                 os.system('cls')
                           
             elif opcion == '2':
                 print("Consulta 2")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta2.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta2.txt"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta2.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta2.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta2.txt"')
                 input("")
                 os.system('cls')
                 
             elif opcion == '3':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta3.txt"')
-                input("")
+                print("Consulta 3")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta3.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta3.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta3.txt"')
                 os.system('cls')
 
             elif opcion == '4':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta4.txt"')
+                print("Consulta 4")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta4.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta4.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta4.txt"')
                 input("")
                 os.system('cls')
 
             elif opcion == '5':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta5.txt"')
+                print("Consulta 5")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta5.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta5.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta5.txt"')
                 input("")
                 os.system('cls')
 
             elif opcion == '6':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta6.txt"')
+                print("Consulta 6")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta6.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta6.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta6.txt"')
                 input("")
                 os.system('cls')
 
             elif opcion == '7':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta7.txt"')
+                print("Consulta 7")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta7.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta7.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta7.txt"')
                 input("")
                 os.system('cls')
 
             elif opcion == '8':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta8.txt"')
+                print("Consulta 8")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta8.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta8.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta8.txt"')
                 input("")
                 os.system('cls')
 
             elif opcion == '9':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta9.txt"')
+                print("Consulta 9")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta9.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta9.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta9.txt"')
                 input("")
                 os.system('cls')
 
             elif opcion == '10':
-                print("Consulta 1")
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
-                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta10.txt"')
+                print("Consulta 10")
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta10.sql"')
+                os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta10.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\scripts\consulta10.txt"')
                 input("")
                 os.system('cls')
                 
