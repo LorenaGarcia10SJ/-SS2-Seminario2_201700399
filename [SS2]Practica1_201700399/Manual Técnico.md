@@ -17,7 +17,8 @@ Específicos
 - Visual studio Code, python
 
 # Modelo de Estrella
-De los datos proporcionados del archivo .csv se observo que se puede divir la información de la siguiente manera:<br>
+De los datos proporcionados del archivo .csv se observo que se puede divir la información de la siguiente manera:
+<br>
 PassengerID;FirstName;LastName;Gender;Age;Nationality  
 AirportName;AirportCountryCode;CountryName;AirportContinent;Continents  
 DepartureDate  
@@ -35,8 +36,8 @@ Observando y analizando lo anterior se procedio a estructurar los datos en un mo
 
 # Tabla Hechos(fact)
 
-Contiene los datos principales que se desean analizar, como las transacciones o eventos. En este caso la tabla de hecho inclure la siguiente informacion sobre los vuelos: <br>
-
+Contiene los datos principales que se desean analizar, como las transacciones o eventos, en este caso tomamos una base de lo que se desea consultar. En este caso la tabla de hecho incluye la siguiente informacion sobre los vuelos: <br>
+<br>
 - HechoID
 - PassengerID
 - AeropuertosID
@@ -45,6 +46,7 @@ Contiene los datos principales que se desean analizar, como las transacciones o 
 - ArrivalAirport
 - FlightStatus.
 <br>
+
 La metrica de ArrivalAirport y FlightStatus la estamos tomando en la tabla de hecho como un dato sin la necesidad de relacionar con otros atributos.
 
 # Dimensiones
