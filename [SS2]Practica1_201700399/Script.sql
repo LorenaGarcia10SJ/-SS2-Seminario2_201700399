@@ -14,7 +14,8 @@ CREATE TABLE Pasajeros (
 );
 -- Aeropuerto
 CREATE TABLE Aeropuertos (
-	AirportCountryCode NVARCHAR(10) PRIMARY KEY,
+	AeropuertoId INT IDENTITY(1,1) PRIMARY KEY,
+	AirportCountryCode NVARCHAR(10),
     AirportName NVARCHAR(100),
     CountryName NVARCHAR(100),
     AirportContinent NVARCHAR(100),
@@ -24,10 +25,7 @@ CREATE TABLE Aeropuertos (
 
 CREATE TABLE SalidaFecha (
 	SalidaId INT IDENTITY(1,1) PRIMARY KEY,
-    DepartureDate DATE,
-	Dia INT,
-	Mes INT,
-	Año INT
+    DepartureDate DATE
 );
 -- Piloto
 CREATE TABLE Pilotos (
@@ -39,13 +37,13 @@ CREATE TABLE Pilotos (
 CREATE TABLE Hechos (
 	HechosId INT IDENTITY(1,1) PRIMARY KEY,
 	PassengerID NVARCHAR(50),
-    AirportCountryCode NVARCHAR(10),
+    AeropuertoId INT,
 	SalidaId INT,
     PilotoId INT,
     ArrivalAirport NVARCHAR(100),
     FlightStatus NVARCHAR(50)
 	FOREIGN KEY (PassengerID) REFERENCES Pasajeros(PassengerID),
-    FOREIGN KEY (AirportCountryCode) REFERENCES Aeropuertos(AirportCountryCode),
+    FOREIGN KEY (AeropuertoId) REFERENCES Aeropuertos(AeropuertoId),
     FOREIGN KEY (SalidaId) REFERENCES SalidaFecha(SalidaId),
     FOREIGN KEY (PilotoId) REFERENCES Pilotos(PilotoId)
 );

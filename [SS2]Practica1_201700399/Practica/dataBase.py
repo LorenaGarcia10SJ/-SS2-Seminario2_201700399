@@ -1,6 +1,7 @@
 import pyodbc
 import csv
 from datetime import datetime
+import os
 
 def conexionBD():
     try:
@@ -35,7 +36,8 @@ def crearModelo():
     );
     
     CREATE TABLE Aeropuertos (
-	AirportCountryCode NVARCHAR(10) PRIMARY KEY,
+    AeropuertosID INT IDENTITY(1,1) PRIMARY KEY,
+	AirportCountryCode NVARCHAR(10),
     AirportName NVARCHAR(100),
     CountryName NVARCHAR(100),
     AirportContinent NVARCHAR(100),
@@ -55,13 +57,13 @@ def crearModelo():
     CREATE TABLE Hechos (
 	HechosId INT IDENTITY(1,1) PRIMARY KEY,
 	PassengerID VARCHAR(50),
-    AirportCountryCode NVARCHAR(10),
+    AeropuertosID INT,
 	SalidaId INT,
     PilotoId INT,
     ArrivalAirport NVARCHAR(100),
     FlightStatus NVARCHAR(50)
 	FOREIGN KEY (PassengerID) REFERENCES Pasajeros(PassengerID),
-    FOREIGN KEY (AirportCountryCode) REFERENCES Aeropuertos(AirportCountryCode),
+    FOREIGN KEY (AeropuertosID) REFERENCES Aeropuertos(AeropuertosID),
     FOREIGN KEY (SalidaId) REFERENCES SalidaFecha(SalidaId),
     FOREIGN KEY (PilotoId) REFERENCES Pilotos(PilotoId)
     );
@@ -139,62 +141,48 @@ def cargarInformacion(conn):
 
         # AirportCountryCode | AirportName  | CountryName | AirportContinent | Continents
         insertAeropuertos = """
-        MERGE INTO Aeropuertos AS target
-        USING (
-            SELECT DISTINCT AirportCountryCode, AirportName, CountryName, AirportContinent, Continents
-            FROM ##informacionTemporal
-        ) AS source ON target.AirportCountryCode = source.AirportCountryCode
-        WHEN NOT MATCHED THEN
-        INSERT (AirportCountryCode, AirportName, CountryName, AirportContinent, Continents)
-        VALUES (source.AirportCountryCode, source.AirportName, source.CountryName, source.AirportContinent, source.Continents);
-        
+        INSERT INTO Aeropuertos (AirportCountryCode, AirportName, CountryName, AirportContinent, Continents)
+        SELECT DISTINCT AirportCountryCode, AirportName, CountryName, AirportContinent, Continents
+        FROM ##informacionTemporal;
         """
         cursor.execute(insertAeropuertos)
         conn.commit()
-
-        # DepartureDate
+        
         insertSalidaFecha = """
         INSERT INTO SalidaFecha (DepartureDate)
         SELECT DISTINCT DepartureDate
-        FROM ##informacionTemporal
-        WHERE DepartureDate NOT IN (SELECT DepartureDate FROM SalidaFecha);
+        FROM ##informacionTemporal;
         """
+        
         cursor.execute(insertSalidaFecha)
         conn.commit()
         
-        # PilotName
         insertPilotos = """
         INSERT INTO Pilotos (PilotName)
         SELECT DISTINCT PilotName
-        FROM ##informacionTemporal
-        WHERE PilotName NOT IN (SELECT PilotName FROM Pilotos);
+        FROM ##informacionTemporal;
         """
+        
         cursor.execute(insertPilotos)
         conn.commit()
         
-        # HechosId | PassengerID | AirportCountryCode | SalidaId | PilotoId | ArrivalAirport | FlightStatus
+        # PassengerID | AeropuertoId | SalidaId  | PilotoId | ArrivalAirport | FlightStatus
         insertHechos = """
-        INSERT INTO Hechos (PassengerID, AirportCountryCode, SalidaId, PilotoId, ArrivalAirport, FlightStatus)
+        INSERT INTO Hechos (PassengerID, AeropuertosID, SalidaId, PilotoId, ArrivalAirport, FlightStatus)
         SELECT 
-            t.PassengerID,
-            t.AirportCountryCode,
+            it.PassengerID,
+            a.AeropuertosID,
             s.SalidaId,
             p.PilotoId,
-            t.ArrivalAirport,
-            t.FlightStatus
-        FROM ##informacionTemporal t
-        JOIN SalidaFecha s ON t.DepartureDate = s.DepartureDate
-        JOIN Pilotos p ON t.PilotName = p.PilotName
-        WHERE NOT EXISTS (
-            SELECT 1 FROM Hechos h
-            WHERE h.PassengerID = t.PassengerID
-            AND h.AirportCountryCode = t.AirportCountryCode
-            AND h.SalidaId = s.SalidaId
-            AND h.PilotoId = p.PilotoId
-            AND h.ArrivalAirport = t.ArrivalAirport
-            AND h.FlightStatus = t.FlightStatus
-        );
+            it.ArrivalAirport,
+            it.FlightStatus
+        FROM ##informacionTemporal it
+        JOIN Pasajeros pa ON it.PassengerID = pa.PassengerID
+        JOIN Aeropuertos a ON it.AirportCountryCode = a.AirportCountryCode AND it.AirportName = a.AirportName
+        JOIN SalidaFecha s ON it.DepartureDate = s.DepartureDate
+        JOIN Pilotos p ON it.PilotName = p.PilotName;
         """
+        
         cursor.execute(insertHechos)
         conn.commit()
         
@@ -203,4 +191,6 @@ def cargarInformacion(conn):
     except Exception as e:
         print(f"Ocurrió un error al cargar la información: {e}")
         
-    
+def consulta1(conn):
+    os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql"')
+    os.system(r'sqlcmd -S LAPTOP-VUS22HJ1 -d ProcesoETL -i "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.sql" -o "C:\Users\logas\Desktop\USAC\SEGUNDO SEMESTRE 2024\Seminario 2\Lab\-SS2-Seminario2_201700399\[SS2]Practica1_201700399\Practica\consulta1.txt"')

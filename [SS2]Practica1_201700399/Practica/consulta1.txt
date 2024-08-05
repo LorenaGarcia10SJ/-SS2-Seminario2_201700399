@@ -1,0 +1,30 @@
+Cantidad Pasajeros
+------------------
+             98617
+
+(1 rows affected)
+Cantidad Aeropuertos
+--------------------
+                9107
+
+(1 rows affected)
+Cantidad Salidas
+----------------
+             364
+
+(1 rows affected)
+Cantidad Pilotos
+----------------
+           98599
+
+(1 rows affected)
+Cantidad Hechos
+---------------
+          98617
+
+(1 rows affected)
+Cantidad Temporal
+-----------------
+            98617
+
+(1 rows affected)
