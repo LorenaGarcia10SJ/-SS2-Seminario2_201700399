@@ -32,15 +32,15 @@ def crearModelo():
         LastName NVARCHAR(100),
         Gender NVARCHAR(10),
         Age INT,
-        Nationality NVARCHAR(100)
+        Nationality NVARCHAR(40)
     );
     
     CREATE TABLE Aeropuertos (
     AeropuertosID INT IDENTITY(1,1) PRIMARY KEY,
 	AirportCountryCode NVARCHAR(10),
-    AirportName NVARCHAR(100),
-    CountryName NVARCHAR(100),
-    AirportContinent NVARCHAR(100),
+    AirportName NVARCHAR(70),
+    CountryName NVARCHAR(50),
+    AirportContinent NVARCHAR(50),
     Continents NVARCHAR(100)
     );
     
@@ -87,11 +87,11 @@ def extraerInformacion(ruta,conn):
             LastName NVARCHAR(100),
             Gender NVARCHAR(10),
             Age INT,
-            Nationality NVARCHAR(100),
-            AirportName NVARCHAR(100),
+            Nationality NVARCHAR(40),
+            AirportName NVARCHAR(70),
             AirportCountryCode NVARCHAR(50),
-            CountryName NVARCHAR(100),
-            AirportContinent NVARCHAR(100),
+            CountryName NVARCHAR(50),
+            AirportContinent NVARCHAR(50),
             Continents NVARCHAR(100),
             DepartureDate DATE,
             ArrivalAirport NVARCHAR(100),
@@ -190,4 +190,3 @@ def cargarInformacion(conn):
         
     except Exception as e:
         print(f"Ocurrió un error al cargar la información: {e}")
-        

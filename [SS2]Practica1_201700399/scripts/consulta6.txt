@@ -1,13 +1,7 @@
 FlightStatus                                       CantidadVuelos
 -------------------------------------------------- --------------
-Cancelled                                                   32937
-On Time                                                     32843
-Delayed                                                     32830
-";Cancelled                                                     2
-urette Claybourn";On Time                                       1
-urette Chandler";On Time                                        1
-urette Happer";Cancelled                                        1
-urette Pesic";Delayed                                           1
-urette Fedder";Cancelled                                        1
+Cancelled                                                   32941
+On Time                                                     32845
+Delayed                                                     32831
 
-(9 rows affected)
+(3 rows affected)
