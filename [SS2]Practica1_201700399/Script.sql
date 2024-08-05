@@ -14,7 +14,7 @@ CREATE TABLE Pasajeros (
 );
 -- Aeropuerto
 CREATE TABLE Aeropuertos (
-	AeropuertoId INT IDENTITY(1,1) PRIMARY KEY,
+    AeropuertoId INT IDENTITY(1,1) PRIMARY KEY,
 	AirportCountryCode NVARCHAR(10),
     AirportName NVARCHAR(100),
     CountryName NVARCHAR(100),
