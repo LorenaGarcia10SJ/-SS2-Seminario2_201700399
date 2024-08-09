@@ -32,7 +32,7 @@ def crearModelo():
         LastName NVARCHAR(100),
         Gender NVARCHAR(10),
         Age INT,
-        Nationality NVARCHAR(40)
+        Nationality NVARCHAR(50)
     );
     
     CREATE TABLE Aeropuertos (
@@ -87,7 +87,7 @@ def extraerInformacion(ruta,conn):
             LastName NVARCHAR(100),
             Gender NVARCHAR(10),
             Age INT,
-            Nationality NVARCHAR(40),
+            Nationality NVARCHAR(50),
             AirportName NVARCHAR(70),
             AirportCountryCode NVARCHAR(50),
             CountryName NVARCHAR(50),
