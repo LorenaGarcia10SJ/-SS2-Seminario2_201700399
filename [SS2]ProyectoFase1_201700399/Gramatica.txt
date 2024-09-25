@@ -1,0 +1,32 @@
+<inicio> ::= LLAVE_A <instrucciones> LLAVE_C
+
+<instrucciones> ::= <instrucciones> <instruccion>
+                  | <instruccion>
+
+<instruccion> ::= <definicionConjunto>
+                | <operacionConjunto>
+                | <evaluarElementos>
+
+<definicionConjunto> ::= T_CONJ DOSPUNTOS ID DIFERENCIA MAYOR <notacion> PUNTOYCOMA
+
+<operacionConjunto> ::= T_OPERA DOSPUNTOS ID DIFERENCIA MAYOR <expresion> PUNTOYCOMA
+
+<evaluarElementos> ::= T_EVALUAR PARENTESIS_A LLAVE_A <elementosLista> LLAVE_C COMA ID PARENTESIS_C PUNTOYCOMA
+
+<notacion> ::= <expresion> NOTACION <expresion>
+             | <elementosLista>
+
+<elementosLista> ::= <elementosLista> COMA <expresion>
+                  | <expresion>
+
+<expresion> ::= COMPLEMENTO_DOBLE <expresion>
+             | UNION <expresion> <expresion>
+             | INTERSECCION <expresion> <expresion>
+             | COMPLEMENTO <expresion>
+             | DIFERENCIA <expresion> <expresion>
+             | LLAVE_A <expresion> LLAVE_C
+             | DECIMAL
+             | ENTERO
+             | CADENA
+             | ID
+             | C_UNIVERSO

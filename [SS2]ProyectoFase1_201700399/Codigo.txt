@@ -1,8 +1,28 @@
-CREATE DATABASE Fase1;
-USE Fase1;
--- DROP TABLE TemporalCompra;
--- DROP TABLE TemporalVenta;
+Dev_codProveedor -> CODPROVEEDOR == "" ? (DT_STR,50,1252)NULL(DT_STR,50,1252) : CODPROVEEDOR
+Dev_NumeroProveedor -> (ISNULL(NUMEROPROVEEDOR) || (DT_NUMERIC,12,2)NUMEROPROVEEDOR < 0) ? (DT_NUMERIC,12,2)NULL(DT_NUMERIC,12,2) : (DT_NUMERIC,12,2)NUMEROPROVEEDOR
+Dev_CostoU -> (ISNULL(COSTOU) || (DT_NUMERIC,12,2)COSTOU < 0) ? (DT_NUMERIC,12,2)NULL(DT_NUMERIC,12,2) : (DT_NUMERIC,12,2)COSTOU
+Dev_Unidades -> (UNIDADES < 0) ? (DT_NUMERIC,12,2)NULL(DT_NUMERIC,12,2) : (DT_NUMERIC,12,2)UNIDADES
 
+Dev_CodCliente ->  CODIGOCLIENTE == "" ? (DT_STR,50,1252)NULL(DT_STR,50,1252) : CODIGOCLIENTE
+Dev_PrecioUnitario -> (PRECIOUNITARIO < 0) ? (DT_NUMERIC,12,2)NULL(DT_NUMERIC,12,2) : (DT_NUMERIC,12,2)PRECIOUNITARIO
+Dev_Unidades -> (UNIDADES < 0) ? (DT_NUMERIC,12,2)NULL(DT_NUMERIC,12,2) : (DT_NUMERIC,12,2)UNIDADES
+Dev_NumeroCliente ->  (ISNULL(NUMEROCLIENTE) || (DT_NUMERIC,12,2)NUMEROCLIENTE < 0) ? (DT_NUMERIC,12,2)NULL(DT_NUMERIC,12,2) : (DT_NUMERIC,12,2)NUMEROCLIENTE
+
+LAPTOP-VUS22HJ1
+
+Mysql@localhost:3306
+
+SELECT * FROM Ventas WHERE Unidades IS NULL OR PrecioUnitario IS NULL;
+
+-- Ejemplo de consulta para verificar registros nulos en Compras
+SELECT * FROM Compras WHERE Unidades IS NULL OR CostoU IS NULL;
+
+///-------------------------------------------------------------------
+
+CREATE DATABASE FaseDB2;
+USE FaseDB2;
+-- DROP TABLE TemporalCompra2;
+-- DROP TABLE TemporalVenta2;
 
 CREATE TABLE TemporalCompra
 (
@@ -47,14 +67,15 @@ CREATE TABLE TemporalVenta (
     Unidades VARCHAR(200),	------
     PrecioUnitario DECIMAL(18, 2)	-----
 );
+SELECT * FROM TemporalCompra2;
+SELECT * FROM TemporalVenta2;
 
-SELECT * FROM TemporalCompra;
-SELECT * FROM TemporalVenta;
 
 -- Vacias las tablas temporales
-DELETE FROM TemporalVenta;
-DELETE FROM TemporalCompra;
-------------------------------------------- DATA WAREHOUSE ----------------------------------------------------------------------
+TRUNCATE TABLE TemporalVenta2;
+TRUNCATE TABLE TemporalCompra2;
+
+
 -- Dimension: Tiempo
 CREATE TABLE DimTiempo(
 	CodFecha INT IDENTITY(1,1) PRIMARY KEY,
@@ -144,21 +165,13 @@ CREATE TABLE FactCompras (
 	FOREIGN KEY (CodigoSucursal) REFERENCES DimSucursal(CodSucursal)
 );
 
-SELECT * FROM DimProveedor;
-SELECT COUNT(*) as Proveedor FROM DimProveedor;
-SELECT COUNT(*) FROM dbo.DimProveedor;
 
-SELECT * FROM DimCliente;
+SELECT ?= COUNT(*)FROM dbo.DimProveedor
+
 SELECT COUNT(*) FROM dbo.DimCliente;
-
-SELECT * FROM DimVendedor;
 SELECT COUNT(*) FROM dbo.DimVendedor;
-
-SELECT * FROM DimSucursal;
+SELECT COUNT(*) FROM dbo.DimProductor;
 SELECT COUNT(*) FROM dbo.DimSucursal;
-
-SELECT * FROM DimProducto;
-SELECT COUNT(*) FROM dbo.DimProducto;
-
-SELECT COUNT(*) FROM dbo.TemporalCompra;
-SELECT COUNT(*) FROM dbo.TemporalVenta;
+SELECT COUNT(*) FROM dbo.DimCompra;
+SELECT COUNT(*) FROM dbo.DimVenta;
+https://github.com/LorenaGarcia10SJ/-SS2-Seminario2_201700399.git
